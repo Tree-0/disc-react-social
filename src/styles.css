@@ -60,6 +60,23 @@
     padding: 10px;
     text-wrap: none;
   }
+
+  .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-3);
+    border-style: outset;
+    border-radius: 6px;
+  }
+
+  .tag > label {
+    font-size: 14px;
+  }
+
+  .tag > button {
+    border-style: none;
+  }
   
   .dynamictagsmenu {
     display: flex;

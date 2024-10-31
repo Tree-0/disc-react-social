@@ -6,7 +6,6 @@ import './App.css';
 import './styles.css';
 
 function NavBar() {
-
   return (
     <nav class="menubar">
       <h2>DISC SOCIAL APP</h2>
@@ -17,6 +16,18 @@ function NavBar() {
         <button>Log in</button>
       </div>
     </nav>
+  )
+}
+
+function FooterBar() {
+  return (
+    <nav class="menubar">
+      <div>
+        <button>Contact</button>
+        <button>Careers</button>
+        <button>Help</button>
+      </div>
+    </nav> 
   )
 }
 
@@ -54,31 +65,76 @@ function UserCard(props) {
   )
 }
 
+{/*Individual tag component that can be added or removed from overall filter*/}
+function TagFilter(props) {
+  return (
+    <div class="tag">
+      <label>{props.text}</label>
+      <button onClick={() => props.handleDelete(props.tagid)}>X</button>
+    </div>
+  )
+}
+
+{/*Encompassing search component that allows adding or removing tags*/}
+function TagFilterBar() {
+  const [tagList, setTagList] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleDelete = (tagid) => {
+    setTagList(tagList.filter(tag => tag.tagid !== tagid));
+  };
+
+  const handleAddTag = () => {
+    if (inputValue.trim() !== "") {
+      const newTag = {
+        tagid: Date.now(),
+        text: inputValue.trim()
+      };
+      setTagList([...tagList, newTag]);
+      setInputValue('');
+    }
+  };
+
+  useEffect(() => {
+    console.log(`updated tags: ${tagList.length} tags applied`);
+  }, [tagList]);
+
+  return (
+    <div>
+      <div class="dynamictagsmenu">
+        <input 
+          name="filterInput" 
+          type="text" 
+          placeholder="Search tags"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button onClick={handleAddTag}>Add Tag</button>
+
+        {tagList.map(tag => (
+          <TagFilter 
+            key={tag.tagid}
+            tagid={tag.tagid}
+            text={tag.text} 
+            handleDelete={handleDelete}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function App() {
 
 
   return (
     <div className="App">
-      <header className="App-header">
+      <body>
+
         <div>
           <NavBar></NavBar>
-        </div>
-      </header>
-      <body>
-        <div>
-          <div class="dynamictagsmenu">
-            <input type="text" placeholder="Search tags" />
-            <button>Eventually JS</button>
-            <button>will add</button>
-            <button>and</button>
-            <button>remove</button>
-            <button>tags</button>
-            <button>tag</button>
-            <button>tag</button>
-            <button>tag</button>
-          </div>
-        </div>
+          
+          <TagFilterBar></TagFilterBar>
 
           {/* Grid of User Cards */}
           <div className='griddisplay'>
@@ -90,17 +146,14 @@ function App() {
           <UserCard name="User"></UserCard>
           <UserCard name="User"></UserCard>
           <UserCard name="User"></UserCard>
+          </div>
         </div>
 
         <footer>
-          <nav class="menubar">
-            <button>Contact</button>
-            <button>Careers</button>
-            <button>Help</button>
-          </nav>
+          <FooterBar></FooterBar>
         </footer>
 
-        </body>
+      </body>
     </div>
   );
 }
