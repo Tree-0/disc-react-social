@@ -4,6 +4,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css';
 import './styles.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import NoPage from "./pages/NoPage";
+import UserProfile from "./pages/UserProfile";
+
 
 function NavBar() {
   return (
@@ -128,9 +134,9 @@ function App() {
 
 
   return (
+
     <div className="App">
       <body>
-
         <div>
           <NavBar></NavBar>
           
@@ -152,7 +158,13 @@ function App() {
         <footer>
           <FooterBar></FooterBar>
         </footer>
-
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}/>
+            <Route path="userProfile" element={<UserProfile />}/>
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
       </body>
     </div>
   );
