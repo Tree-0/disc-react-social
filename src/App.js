@@ -71,7 +71,7 @@ function UserCard(props) {
   )
 }
 
-{/*Individual tag component that can be added or removed from overall filter*/}
+/*Individual tag component that can be added or removed from overall filter*/
 function TagFilter(props) {
   return (
     <div class="tag">
@@ -81,7 +81,7 @@ function TagFilter(props) {
   )
 }
 
-{/*Encompassing search component that allows adding or removing tags*/}
+/*Encompassing search component that allows adding or removing tags*/
 function TagFilterBar() {
   const [tagList, setTagList] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -116,15 +116,16 @@ function TagFilterBar() {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button onClick={handleAddTag}>Add Tag</button>
-
+      </div>
+      <div class="dynamictagsmenu">
         {tagList.map(tag => (
-          <TagFilter 
-            key={tag.tagid}
-            tagid={tag.tagid}
-            text={tag.text} 
-            handleDelete={handleDelete}
-          />
-        ))}
+            <TagFilter 
+              key={tag.tagid}
+              tagid={tag.tagid}
+              text={tag.text} 
+              handleDelete={handleDelete}
+            />
+          ))}
       </div>
     </div>
   );
@@ -137,27 +138,6 @@ function App() {
 
     <div className="App">
       <body>
-        <div>
-          <NavBar></NavBar>
-          
-          <TagFilterBar></TagFilterBar>
-
-          {/* Grid of User Cards */}
-          <div className='griddisplay'>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          <UserCard name="User"></UserCard>
-          </div>
-        </div>
-
-        <footer>
-          <FooterBar></FooterBar>
-        </footer>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}/>
@@ -165,9 +145,15 @@ function App() {
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
+        <footer>
+          <FooterBar></FooterBar>
+        </footer>
+
       </body>
     </div>
   );
 }
+
+export { NavBar, TagFilterBar, UserCard, FooterBar };
 
 export default App;
