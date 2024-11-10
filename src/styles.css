@@ -1,133 +1,134 @@
 :root {
-    --color-1: #ab7dce;
-    --color-2: #cb9fe5;
-    --color-3: #D5D5D5;
-    --color-4: #333333;
-    --color-5: #f3f5e9;
-  }
-  
-  * {
-    font-family: arial;
-    font-weight: bold;
-  }
-  
-  body {
-    background-color: var(--color-4)
-  }
-  
-  button {
-    background-color: var(--color-3);
-    border-radius: 6px;
-    border-color: var(--color-3);
-    
-  }
-  
-  h2 {
-    font-weight: bold;
-    font-family: sans-serif;
-  }
-  
-  .div {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-1);
-    text-align: center;
-    padding: 20px;
-    border-radius: 6px;
-  }
-  
-  .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-content: center;
-  }
-  
-  .menubar {
-    background-color: var(--color-1);
-    padding: 10px;
-  }
-  
-  .menubar > div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .menubar > div > button {
-    padding: 10px;
-    text-wrap: none;
-  }
+  --color-1: #ab7dce;
+  --color-2: #cb9fe5;
+  --color-3: #D5D5D5;
+  --color-4: #333333;
+  --color-5: #f3f5e9;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
 
-  .tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-3);
-    border-style: outset;
-    border-radius: 6px;
-  }
+* {
+  font-family: arial;
+  font-weight: bold;
+}
 
-  .tag > label {
-    font-size: 14px;
-  }
+body {
+  background-color: var(--color-4)
+}
 
-  .tag > button {
-    border-style: none;
-  }
+button {
+  background-color: var(--color-3);
+  border-radius: 6px;
+  border-color: var(--color-3);
+  
+}
 
-  .tag > button > :hover {
-    background-color: var(--color-4);
-  }
-  
-  .dynamictagsmenu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-    gap: 5px;
-  }
-  
-  .dynamictagsmenu > button {
-    min-width: 75px;
-    height: 30px;
-  }
-  
-  .dynamictagsmenu > :hover, .div > button:hover {
-    background-color: var(--color-5);
-  }
-  
-  input {
-    height: 23px; 
-    resize: none;
-    align-content: center;
-  }
-  
-  .griddisplay {
-    display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 10px;
-        padding: 20px;
-  }
-  
+h2 {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-1);
+  text-align: center;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-content: center;
+}
+
+.menubar {
+  background-color: var(--color-1);
+  padding: 10px;
+}
+
+.menubar > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menubar > div > button {
+  padding: 10px;
+  text-wrap: none;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-3);
+  border-style: outset;
+  border-radius: 6px;
+}
+
+.tag > label {
+  font-size: 14px;
+}
+
+.tag > button {
+  border-style: none;
+}
+
+.tag > button > :hover {
+  background-color: var(--color-4);
+}
+
+.dynamictagsmenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  gap: 5px;
+}
+
+.dynamictagsmenu > button {
+  min-width: 75px;
+  height: 30px;
+}
+
+.dynamictagsmenu > :hover, .div > button:hover {
+  background-color: var(--color-5);
+}
+
+input {
+  height: 23px; 
+  resize: none;
+  align-content: center;
+}
+
+.griddisplay {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
 .follow-button {
-    background-color: gray; /* default color */
-    border-radius: 6px;
-    border: none;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-  }
-  
+  background-color: gray; /* default color */
+  border-radius: 6px;
+  border: outset;
+  padding: 10px;
+  font-weight: bold;
+}
+
 /* Hover effect */
 .follow-button:hover {
   background-color: var(--color-5); /* or another color of your choice */
 }
-  
+
 .user-pfp {
   border-radius: 6px;
 }

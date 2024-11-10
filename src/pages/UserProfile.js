@@ -1,5 +1,13 @@
+import { UserCard } from "../App.js"
+
 const UserProfile = () => {
-    return <h1>User Profile</h1>;
+    return (
+    <div>
+      <UserCard firstName="Placeholder" lastName="placeholder">
+
+      </UserCard>
+    </div>
+    )
   };
   
-  export default UserProfile;
+export default UserProfile;

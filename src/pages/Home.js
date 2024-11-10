@@ -1,4 +1,4 @@
-import {NavBar, TagFilterBar, UserCard} from "../App.js"
+import {NavBar, TagFilterBar, UserCardGrid} from "../App.js"
 
 
 const Home = () => {
@@ -9,17 +9,13 @@ const Home = () => {
         <TagFilterBar></TagFilterBar>
 
         {/* Grid of User Cards */}
-        <div className='griddisplay'>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
-        <UserCard name="User"></UserCard>
+        <div>
+          <div className='griddisplay' style={{display: "flex", justifyContent: 'center'}}>
+            <UserCardGrid></UserCardGrid>
+          </div>
         </div>
+        
       </div>)
   };
   
-  export default Home;
+export default Home;
