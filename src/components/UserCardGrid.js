@@ -26,6 +26,10 @@ function UserCardGrid() {
             firstName={user.firstName} 
             lastName={user.lastName}
             profilePicture={ user.profilePicture || default_pfp}
+            graduationYear={user.graduationYear}
+            bio={user.bio}
+            major={user.major}
+            email={user.email}
             >
           </UserCard>
         ))}

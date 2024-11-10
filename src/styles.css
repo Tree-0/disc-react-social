@@ -50,6 +50,21 @@ h2 {
   padding: 10px;
 }
 
+.menubar a {
+  background-color: var(--color-1); 
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.menubar a:hover {
+  background-color: var(--color-2); 
+}
+
+
 .menubar > div {
   display: flex;
   flex-direction: row;
@@ -58,8 +73,8 @@ h2 {
   gap: 10px;
 }
 
-.menubar > div > button {
-  padding: 10px;
+.menubar > button {
+  padding: 10px 20px;
   text-wrap: none;
 }
 
@@ -117,16 +132,15 @@ input {
 }
 
 .follow-button {
-  background-color: gray; /* default color */
+  background-color: gray; 
   border-radius: 6px;
   border: outset;
   padding: 10px;
   font-weight: bold;
 }
 
-/* Hover effect */
 .follow-button:hover {
-  background-color: var(--color-5); /* or another color of your choice */
+  background-color: var(--color-5); 
 }
 
 .user-pfp {
