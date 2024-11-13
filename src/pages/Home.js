@@ -4,7 +4,7 @@ import {NavBar, TagFilterBar, UserCardGrid} from "../App.js"
 const Home = () => {
     return (       
       <div>
-        <NavBar></NavBar>
+        <NavBar/>
         
         <TagFilterBar></TagFilterBar>
 

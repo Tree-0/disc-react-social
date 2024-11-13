@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FollowButton from "../components/FollowButton";
 
 const UserProfile = () => {
   const location = useLocation();
@@ -17,11 +18,15 @@ const UserProfile = () => {
           flexDirection:"row", 
           justifyContent:"center",
           margin:"10 10 10 10"}}>
+
         <img className="user-pfp" src={profilePicture} alt=""
           style={{padding:"10px", width:"250", height:"250"}}/>
+
         <div style={{display:"flex", flexDirection:"column"}}>
           <h1>{firstName + " " + lastName}</h1>
-          <button className="follow-button">Follow</button>
+
+          <FollowButton/>
+          
           <h2>{graduationYear + " "}</h2>
           <h2>{" " + major}</h2>
         </div>

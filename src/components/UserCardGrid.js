@@ -16,7 +16,7 @@ function UserCardGrid() {
       }
       
       fetchUsers();
-    }, [users]);
+    }, []);
 
     // log users when they change
     useEffect(() => {

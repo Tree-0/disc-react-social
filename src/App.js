@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/">
           <Route index element={<Home />}/>
           <Route path="userProfile" element={<UserProfile />}/>
           <Route path="*" element={<NoPage />} />
