@@ -1,11 +1,11 @@
 :root {
-  --color-1: #ab7dce;
-  --color-2: #cb9fe5;
-  --color-3: #D5D5D5;
-  --color-4: #333333;
-  --color-5: #f3f5e9;
-  --color-black: #000000;
-  --color-white: #ffffff;
+  --purple: #ab7dce;
+  --light-purple: #cb9fe5;
+  --light-gray: #D5D5D5;
+  --dark-gray: #333333;
+  --off-white: #f3f5e9;
+  --black: #000000;
+  --white: #ffffff;
 }
 
 * {
@@ -14,13 +14,13 @@
 }
 
 body {
-  background-color: var(--color-4)
+  background-color: var(--dark-gray)
 }
 
 button {
-  background-color: var(--color-3);
+  background-color: var(--light-purple);
   border-radius: 6px;
-  border-color: var(--color-3);
+  border-color: var(--off-white);
   
 }
 
@@ -32,9 +32,10 @@ h2 {
 .div {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-1);
+  justify-content: space-between;
+  background-color: var(--light-gray);
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   border-radius: 6px;
 }
 
@@ -46,12 +47,12 @@ h2 {
 }
 
 .menubar {
-  background-color: var(--color-1);
+  background-color: var(--purple);
   padding: 10px;
 }
 
 .menubar a {
-  background-color: var(--color-1); 
+  background-color: var(--purple); 
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
@@ -61,7 +62,7 @@ h2 {
 }
 
 .menubar a:hover {
-  background-color: var(--color-2); 
+  background-color: var(--light_purple); 
 }
 
 
@@ -82,7 +83,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-3);
+  background-color: var(--light-purple);
   border-style: outset;
   border-radius: 6px;
 }
@@ -96,7 +97,7 @@ h2 {
 }
 
 .tag > button > :hover {
-  background-color: var(--color-4);
+  background-color: var(--light-gray);
 }
 
 .dynamictagsmenu {
@@ -114,7 +115,7 @@ h2 {
 }
 
 .dynamictagsmenu > :hover, .div > button:hover {
-  background-color: var(--color-5);
+  background-color: var(--light-gray);
 }
 
 input {
@@ -133,16 +134,33 @@ input {
 
 .follow-button {
   background-color: gray; 
+  display: flex;
+  justify-content: center;
+  width: 100px;
   border-radius: 6px;
   border: outset;
-  padding: 10px;
-  font-weight: bold;
-}
+  margin-bottom: 10px;
 
-.follow-button:hover {
-  background-color: var(--color-5); 
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+
+  font-weight: bold;
 }
 
 .user-pfp {
   border-radius: 6px;
+  margin: 10px
+}
+
+.userCardName {
+  background-color: var(--purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin: 0px;
 }

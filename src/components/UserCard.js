@@ -10,7 +10,7 @@ function UserCard(props) {
 
   return (
     <div className='div'>
-      <div>
+      <div className='userCardName'>
         <p>{props.firstName + " " + props.lastName[0]}</p>
       </div>
       <Link to="/userProfile" 
@@ -25,7 +25,10 @@ function UserCard(props) {
         }}>
         <img src={props.profilePicture} className="user-pfp" width={100} height={100} alt="pfp" />
       </Link>
-      <FollowButton following={following} setFollowing={setFollowing}/>
+      <div style={{display: "flex", justifyContent:"center"}}>
+        <FollowButton following={following} setFollowing={setFollowing}/>
+      </div>
+      
     </div>
   )
 }

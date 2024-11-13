@@ -12,14 +12,15 @@ function FollowButton({following, setFollowing}) {
       setFollowText(followText === "follow" ? "following" : "follow");
     }
   
-    const followButtonColor = following ? "var(--color-5)" : 'var(--color-2)';
-    const followButtonTextColor = following? "var(--color-black)" : "var(--color-white)";
+    const followButtonColor = following ? "var(--off-white)" : 'var(--light-purple)';
+    const followButtonTextColor = following? "var(--dark-gray)" : "var(--black)";
   
     return (
         <div>
             <button 
             className="follow-button" 
-            style={{backgroundColor: followButtonColor, color: followButtonTextColor}} 
+            style={{backgroundColor: followButtonColor, 
+                    color: followButtonTextColor}} 
             onClick={handleFollow}
             >
             {followText}
