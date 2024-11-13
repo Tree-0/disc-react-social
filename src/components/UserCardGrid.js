@@ -14,15 +14,21 @@ function UserCardGrid() {
         const data = await response.json();
         setUsers(data);
       }
-  
+      
       fetchUsers();
     }, [users]);
+
+    // log users when they change
+    useEffect(() => {
+      console.log("users:", users);
+    }, [users]);
   
-    console.log(users);
+
     return (        
       <div className='griddisplay'>
         {users.map((user) =>  (
           <UserCard 
+            key = {user.id} // unique key
             firstName={user.firstName} 
             lastName={user.lastName}
             profilePicture={ user.profilePicture || default_pfp}
@@ -30,8 +36,7 @@ function UserCardGrid() {
             bio={user.bio}
             major={user.major}
             email={user.email}
-            >
-          </UserCard>
+          />
         ))}
       </div>)
   }
