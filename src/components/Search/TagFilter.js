@@ -1,5 +1,5 @@
-import '../App.css';
-import '../styles.css';
+import '../../App.css';
+import '../../styles.css';
 
 /*Individual tag component that can be added or removed from overall filter*/
 function TagFilter(props) {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../App.css';
-import '../styles.css';
+import '../../App.css';
+import '../../styles.css';
 import { TagFilter } from './TagFilter';
 
 /*Encompassing search component that allows adding or removing tags*/

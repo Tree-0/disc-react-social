@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import '../App.css';
-import '../styles.css';
+import '../../App.css';
+import '../../styles.css';
 import { Link } from "react-router-dom";
 import FollowButton from "./FollowButton";
 
@@ -14,16 +14,19 @@ function UserCard(props) {
       <div className='userCardName'>
         <p>{props.firstName + " " + props.lastName[0]}</p>
       </div>
-      <Link to="/userProfile" 
+      <Link to={`/user/${props.id}`} 
         state={{
+          id: props.id,
           firstName: props.firstName,
           lastName: props.lastName,
           bio: props.bio,
           graduationYear: props.graduationYear,
           profilePicture: props.profilePicture,
           major: props.major,
-          email: props.email
-        }}>
+          email: props.email,
+          following: following,
+        }}
+      >
         <img src={props.profilePicture} className="user-pfp" width={100} height={100} alt="pfp" />
       </Link>
       <div style={{display: "flex", justifyContent:"center"}}>

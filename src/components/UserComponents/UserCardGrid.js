@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import UserCard from "./UserCard.js";
-import default_pfp from "../default_pfp.png"
-import '../App.css';
-import '../styles.css';
+import default_pfp from "../../default_pfp.png"
+import '../../App.css';
+import '../../styles.css';
 
 /* Grid of User Cards */
 function UserCardGrid() {
@@ -40,6 +40,7 @@ function UserCardGrid() {
         {users.map((user) =>  (
           <UserCard 
             key = {user.id} // unique key
+            id = {user.id} // passing to props
             firstName={user.firstName} 
             lastName={user.lastName}
             profilePicture={ user.profilePicture || default_pfp}

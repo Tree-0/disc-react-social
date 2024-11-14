@@ -5,13 +5,13 @@ import {Routes, Route} from 'react-router-dom';
 
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
-import UserProfile from "./pages/UserProfile";
+import UserPage from "./pages/UserPage.js";
 
-import { NavBar } from './components/NavBar';
-import { FooterBar } from './components/FooterBar';
-import UserCard from './components/UserCard.js';
-import UserCardGrid from './components/UserCardGrid';
-import { TagFilterBar } from './components/TagFilterBar.js';
+import { NavBar } from './components/Menus/NavBar.js';
+import { FooterBar } from './components/Menus/FooterBar.js';
+import UserCard from './components/UserComponents/UserCard.js';
+import UserCardGrid from './components/UserComponents/UserCardGrid.js';
+import { TagFilterBar } from './components/Search/TagFilterBar.js';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />}/>
-          <Route path="userProfile" element={<UserProfile />}/>
+          <Route path="user/:id" element={<UserPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
