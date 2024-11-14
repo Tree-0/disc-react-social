@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import '../App.css';
 import '../styles.css';
@@ -33,4 +34,4 @@ function UserCard(props) {
   )
 }
 
-export default UserCard;
+export default React.memo(UserCard);

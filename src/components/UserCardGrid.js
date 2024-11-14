@@ -7,14 +7,16 @@ import '../styles.css';
 /* Grid of User Cards */
 function UserCardGrid() {
     const [users, setUsers] = useState([]);
-  
+
+    // get user data
+    const fetchUsers = async () => {
+      const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users");
+      const data = await response.json();
+      setUsers(data);
+    }
+
+    // call api on startup
     useEffect(() => {
-      const fetchUsers = async () => {
-        const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users");
-        const data = await response.json();
-        setUsers(data);
-      }
-      
       fetchUsers();
     }, []);
 
