@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import {useFollowing} from "../../contexts/FollowingContext";
 import '../../App.css';
 import '../../styles.css';
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import FollowButton from "./FollowButton";
 
 function UserCard(props) {
   // Following boolean
-  const [following, setFollowing] = useState(false);
+  const [following, toggleFollowing] = useFollowing(props.id); // le custom hook
 
   return (
     <div className='div'>
@@ -23,14 +23,13 @@ function UserCard(props) {
           graduationYear: props.graduationYear,
           profilePicture: props.profilePicture,
           major: props.major,
-          email: props.email,
-          following: following,
+          email: props.email
         }}
       >
         <img src={props.profilePicture} className="user-pfp" width={100} height={100} alt="pfp" />
       </Link>
       <div style={{display: "flex", justifyContent:"center"}}>
-        <FollowButton following={following} setFollowing={setFollowing}/>
+        <FollowButton following={following} setFollowing={toggleFollowing}/>
       </div>
       
     </div>

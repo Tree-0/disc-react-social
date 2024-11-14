@@ -12,18 +12,21 @@ import { FooterBar } from './components/Menus/FooterBar.js';
 import UserCard from './components/UserComponents/UserCard.js';
 import UserCardGrid from './components/UserComponents/UserCardGrid.js';
 import { TagFilterBar } from './components/Search/TagFilterBar.js';
+import { FollowingProvider } from './contexts/FollowingContext.js';
 
 function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />}/>
-          <Route path="user/:id" element={<UserPage />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
+      <FollowingProvider>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />}/>
+            <Route path="user/:id" element={<UserPage />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </FollowingProvider>
       <footer>
         <FooterBar></FooterBar>
       </footer>

@@ -2,23 +2,24 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import FollowButton from "./FollowButton";
+import {useFollowing} from "../../contexts/FollowingContext";
 
 // Generic component? At least, that was the goal when making this, but 
 // let me know if I misunderstood how to make one or if this one is too specialized
 const UserProfile = () => {
   const location = useLocation();
   const { 
+    id,
     firstName, 
     lastName, 
     major, 
     bio, 
     graduationYear, 
     profilePicture, 
-    email,
-    following: initialFollowing
+    email
   } = location.state || {}; 
 
-  const [following, setFollowing] = useState(initialFollowing);
+  const [following, toggleFollowing] = useFollowing(id);
   
   return (
     <div className='div'>
@@ -39,7 +40,7 @@ const UserProfile = () => {
         <div style={{display:"flex", flexDirection:"column"}}>
           <h1>{firstName + " " + lastName}</h1>
 
-          <FollowButton following={following} setFollowing={setFollowing}/>
+          <FollowButton following={following} setFollowing={toggleFollowing}/>
           
           <h2>{graduationYear + " "}</h2>
           <h2>{" " + major}</h2>
