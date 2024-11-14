@@ -43,7 +43,7 @@ function TagFilterBar() {
           {tagList.map(tag => (
               <TagFilter 
                 key={tag.key} //unique key
-                tagKey={tag.key} // pass to props for handleDelet()
+                tagKey={tag.key} // pass to props for handleDelete()
                 text={tag.text} 
                 handleDelete={handleDelete}
               />

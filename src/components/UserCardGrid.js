@@ -10,9 +10,18 @@ function UserCardGrid() {
 
     // get user data
     const fetchUsers = async () => {
-      const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users");
-      const data = await response.json();
-      setUsers(data);
+      try {
+        const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users");
+        
+        if (!response.ok) 
+          throw new Error(`HTTP error: Status: ${response.status}`);
+        
+        const data = await response.json();
+        setUsers(data);
+      } 
+      catch (error) {
+        console.log("Error fetching users", error);
+      }
     }
 
     // call api on startup
