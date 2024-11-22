@@ -6,12 +6,12 @@ const Home = () => {
       <div>
         <NavBar/>
         
-        <TagFilterBar></TagFilterBar>
+        <TagFilterBar/>
 
         {/* Grid of User Cards */}
         <div>
           <div className='griddisplay' style={{display: "flex", justifyContent: 'center'}}>
-            <UserCardGrid></UserCardGrid>
+            <UserCardGrid/>
           </div>
         </div>
         

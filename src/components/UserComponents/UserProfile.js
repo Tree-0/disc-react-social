@@ -12,9 +12,9 @@ const UserProfile = () => {
     id,
     firstName, 
     lastName, 
-    major, 
-    bio, 
-    graduationYear, 
+    //major, 
+    //bio, 
+    //graduationYear, 
     profilePicture, 
     email
   } = location.state || {}; 
@@ -42,12 +42,12 @@ const UserProfile = () => {
 
           <FollowButton following={following} setFollowing={toggleFollowing}/>
           
-          <h2>{graduationYear + " "}</h2>
-          <h2>{" " + major}</h2>
+          {/* <h2>{graduationYear + " "}</h2>
+          <h2>{" " + major}</h2> */}
         </div>
       </div>
       <div>
-        <p>{bio}</p>
+        {/* <p>{bio}</p> */}
         <p>{email}</p>
       </div>
     </div>  

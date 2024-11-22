@@ -11,7 +11,7 @@ function UserCardGrid() {
     // get user data
     const fetchUsers = async () => {
       try {
-        const response = await fetch("https://disc-assignment-5-users-api.onrender.com/api/users");
+        const response = await fetch("http://localhost:3005/api/users");
         
         if (!response.ok) 
           throw new Error(`HTTP error: Status: ${response.status}`);
@@ -41,12 +41,12 @@ function UserCardGrid() {
           <UserCard 
             key = {user.id} // unique key
             id = {user.id} // passing to props
-            firstName={user.firstName} 
-            lastName={user.lastName}
+            firstName={user.first_name} 
+            lastName={user.last_name}
             profilePicture={ user.profilePicture || default_pfp}
-            graduationYear={user.graduationYear}
-            bio={user.bio}
-            major={user.major}
+            //graduationYear={user.graduationYear}
+            //bio={user.bio}
+            //major={user.major}
             email={user.email}
           />
         ))}

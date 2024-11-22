@@ -12,17 +12,17 @@ function UserCard(props) {
   return (
     <div className='div'>
       <div className='userCardName'>
-        <p>{props.firstName + " " + props.lastName[0]}</p>
+        <p>{props.firstName + " " + (props.lastName ? props.lastName[0] : " ")}</p>
       </div>
       <Link to={`/user/${props.id}`} 
         state={{
           id: props.id,
           firstName: props.firstName,
           lastName: props.lastName,
-          bio: props.bio,
-          graduationYear: props.graduationYear,
-          profilePicture: props.profilePicture,
-          major: props.major,
+          //bio: props.bio,
+          //graduationYear: props.graduationYear,
+          //profilePicture: props.profilePicture,
+          //major: props.major,
           email: props.email
         }}
       >
