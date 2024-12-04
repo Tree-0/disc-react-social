@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../App.css';
-import '../styles.css';
+import '../../App.css';
+import '../../styles.css';
 import { TagFilter } from './TagFilter';
 
 /*Encompassing search component that allows adding or removing tags*/
@@ -8,14 +8,14 @@ function TagFilterBar() {
     const [tagList, setTagList] = useState([]);
     const [inputValue, setInputValue] = useState('');
   
-    const handleDelete = (tagid) => {
-      setTagList(tagList.filter(tag => tag.tagid !== tagid));
+    const handleDelete = (key) => {
+      setTagList(tagList.filter(tag => tag.key !== key));
     };
   
     const handleAddTag = () => {
       if (inputValue.trim() !== "") {
         const newTag = {
-          tagid: Date.now(),
+          key: Date.now(), // unique key
           text: inputValue.trim()
         };
         setTagList([...tagList, newTag]);
@@ -42,8 +42,8 @@ function TagFilterBar() {
         <div className="dynamictagsmenu">
           {tagList.map(tag => (
               <TagFilter 
-                key={tag.tagid}
-                tagid={tag.tagid}
+                key={tag.key} //unique key
+                tagKey={tag.key} // pass to props for handleDelete()
                 text={tag.text} 
                 handleDelete={handleDelete}
               />

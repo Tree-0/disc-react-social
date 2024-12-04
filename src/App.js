@@ -3,28 +3,30 @@ import './styles.css';
 
 import {Routes, Route} from 'react-router-dom';
 
-import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
-import UserProfile from "./pages/UserProfile";
+import UserPage from "./pages/UserPage.js";
 
-import { NavBar } from './components/NavBar';
-import { FooterBar } from './components/FooterBar';
-import UserCard from './components/UserCard.js';
-import UserCardGrid from './components/UserCardGrid';
-import { TagFilterBar } from './components/TagFilterBar.js';
+import { NavBar } from './components/Menus/NavBar.js';
+import { FooterBar } from './components/Menus/FooterBar.js';
+import UserCard from './components/UserComponents/UserCard.js';
+import UserCardGrid from './components/UserComponents/UserCardGrid.js';
+import { TagFilterBar } from './components/Search/TagFilterBar.js';
+import { FollowingProvider } from './contexts/FollowingContext.js';
 
 function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}/>
-          <Route path="userProfile" element={<UserProfile />}/>
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
+      <FollowingProvider>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />}/>
+            <Route path="user/:id" element={<UserPage />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </FollowingProvider>
       <footer>
         <FooterBar></FooterBar>
       </footer>

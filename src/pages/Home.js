@@ -4,14 +4,14 @@ import {NavBar, TagFilterBar, UserCardGrid} from "../App.js"
 const Home = () => {
     return (       
       <div>
-        <NavBar></NavBar>
+        <NavBar/>
         
-        <TagFilterBar></TagFilterBar>
+        <TagFilterBar/>
 
         {/* Grid of User Cards */}
         <div>
           <div className='griddisplay' style={{display: "flex", justifyContent: 'center'}}>
-            <UserCardGrid></UserCardGrid>
+            <UserCardGrid/>
           </div>
         </div>
         

@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
-import UserProfile from "./pages/UserProfile";
+import UserPage from "./pages/UserPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
